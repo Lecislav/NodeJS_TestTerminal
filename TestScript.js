@@ -83,6 +83,6 @@ function repeatedFunction() {
       rl.prompt();
       console.log(`Cursor position: ${cursorPosition.rows}, ${cursorPosition.cols}`);
     }
-  }, 5000);
+  }, 5000);//repetition time = 5 sec
 
 }
