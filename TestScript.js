@@ -78,6 +78,7 @@ function repeatedFunction() {
    // rl.prompt();
    //  console.log("I'm showing every 5 sec!");
     if (rl) {
+      //show cursor positions
       cursorPosition=rl.getCursorPos();
       rl.prompt();
       console.log(`Cursor position: ${cursorPosition.rows}, ${cursorPosition.cols}`);
