@@ -10,6 +10,7 @@ const childprocess = require("node:child_process");
 //variables
 let rl; //readline Interface
 let child; //subprocess
+let cursorPosition;
 //variables
 
 //CORE
@@ -74,7 +75,13 @@ function beforeExit() {
 function repeatedFunction() {
   //repeted function on seted interval
   setInterval(() => {
-    console.log("I'm showing every 5 sec!");
+   // rl.prompt();
+   //  console.log("I'm showing every 5 sec!");
+    if (rl) {
+      cursorPosition=rl.getCursorPos();
+      rl.prompt();
+      console.log(`Cursor position: ${cursorPosition.rows}, ${cursorPosition.cols}`);
+    }
   }, 5000);
-  if (rl) rl.prompt();
+
 }
