@@ -8,18 +8,29 @@ const readline = require("node:readline");
 const childprocess = require("node:child_process");
 
 //object to interact with file system
-const fs = require('node:fs');
+const fs = require("node:fs");
+
+//Http in nodejs
+const http = require("node:http");
 
 //variables
 let rl; //readline Interface
-let child; //subprocess
 let cursorPosition;
+
+let child; //subprocess
+
 let fileName;
+
+let server;
+let connectioAmount=0;
+let requestAmount=0;
+let responseAmount=0;
 //variables
 
 //CORE
 
-createFile('lol1.txt');
+//createHttpServer();
+//createFile('lol1.txt');
 //editFile('lol','lol');
 // readingFromConsole();
 // runSubprocess();
@@ -28,21 +39,45 @@ createFile('lol1.txt');
 //CORE
 
 //Functions, all activity of current process
-function editFile(fileName,content){
-  if(typeof fileName ===  "string"  && typeof content == "string"){
-    fs.writeFile(fileName,content,(err) => {
+
+function createHttpServer() {
+  //create new server listining oin 8090
+  server = http.createServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(
+      JSON.stringify({
+        data: "Hello World!",
+      })
+    );
+  });
+  //event on connection
+  server.on("connection", (socket) => {
+    connectioAmount++;
+    console.log(`connection:${connectioAmount}`)
+  });
+  //event on request
+  server.on("request", (request,response) => {
+    requestAmount ++;
+    responseAmount++;
+    console.log(`request:${requestAmount}`)
+    console.log(`response:${responseAmount}`)
+  });
+  server.listen(8090);
+}
+function editFile(fileName, content) {
+  if (typeof fileName === "string" && typeof content == "string") {
+    fs.writeFile(fileName, content, (err) => {
       if (err) throw err;
-      console.log('The file has been saved!');
-      });
+      console.log("The file has been saved!");
+    });
   }
 }
-function createFile(fileName){
-  fs.open(fileName, 'w', function (err, file) {
+function createFile(fileName) {
+  fs.open(fileName, "w", function (err, file) {
     if (err) throw err;
-    console.log('File created!');
+    console.log("File created!");
   });
 }
-
 function readingFromConsole() {
   //Interfaces (in/out stream etc.)
   rl = readline.createInterface({
@@ -97,14 +132,15 @@ function beforeExit() {
 function repeatedFunction() {
   //repeted function on seted interval
   setInterval(() => {
-   // rl.prompt();
-   //  console.log("I'm showing every 5 sec!");
+    // rl.prompt();
+    //  console.log("I'm showing every 5 sec!");
     if (rl) {
       //show cursor positions
-      cursorPosition=rl.getCursorPos();
+      cursorPosition = rl.getCursorPos();
       rl.prompt();
-      console.log(`Cursor position: ${cursorPosition.rows}, ${cursorPosition.cols}`);
+      console.log(
+        `Cursor position: ${cursorPosition.rows}, ${cursorPosition.cols}`
+      );
     }
-  }, 5000);//repetition time = 5 sec
-
+  }, 5000); //repetition time = 5 sec
 }
