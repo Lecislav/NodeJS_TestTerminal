@@ -29,9 +29,9 @@ let responseAmount=0;
 
 //CORE
 
-createHttpServer();
+//createHttpServer();
 //httpGetRequest();
-httpPostRequest();
+//httpPostRequest();
 //createFile('lol1.txt');
 //editFile('lol','lol');
 // readingFromConsole();
