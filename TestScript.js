@@ -30,7 +30,7 @@ let responseAmount=0;
 //CORE
 
 createHttpServer();
-httpGetRequest();
+//httpGetRequest();
 httpPostRequest();
 //createFile('lol1.txt');
 //editFile('lol','lol');
@@ -86,6 +86,14 @@ http.request(options, (res)=>{
 function createHttpServer() {
   //create new server listining oin 8090
   server = http.createServer((req, res) => {
+    
+    let data='';
+    req.on('data', (chunk) => {
+      data+=chunk});
+    req.on('end', () => {
+      console.log(`response on request: ${data}`);
+      
+    });
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(
       JSON.stringify({
