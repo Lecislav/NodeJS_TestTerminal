@@ -29,7 +29,9 @@ let responseAmount=0;
 
 //CORE
 
-//createHttpServer();
+createHttpServer();
+httpGetRequest();
+httpPostRequest();
 //createFile('lol1.txt');
 //editFile('lol','lol');
 // readingFromConsole();
@@ -40,6 +42,47 @@ let responseAmount=0;
 
 //Functions, all activity of current process
 
+function httpPostRequest(){
+  let options = {
+    host: 'localhost',
+    port: 8090,
+    method: 'POST'
+  };
+
+let req = http.request(options, (res)=>{
+  let data='';
+
+  res.on('data', (chunk)=> {
+    data += chunk;
+  });
+
+  res.on('end', () => {
+    console.log(data);
+  });
+  });
+req.write("hellooo");
+req.end();
+}
+function httpGetRequest(){
+  let options = {
+    host: 'localhost',
+    port: 8090,
+    method: 'GET'
+  };
+
+http.request(options, (res)=>{
+  let data='';
+
+  res.on('data', (chunk)=> {
+    data += chunk;
+  });
+
+  res.on('end', () => {
+    console.log(data);
+  });
+  }).end();
+
+}
 function createHttpServer() {
   //create new server listining oin 8090
   server = http.createServer((req, res) => {
@@ -57,8 +100,11 @@ function createHttpServer() {
   });
   //event on request
   server.on("request", (request,response) => {
+    const { method, url } = request;
     requestAmount ++;
     responseAmount++;
+    console.log(method);
+    console.log(url);
     console.log(`request:${requestAmount}`)
     console.log(`response:${responseAmount}`)
   });
