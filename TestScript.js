@@ -19,7 +19,8 @@ let fileName;
 
 //CORE
 
-createFile('lol','lol');
+createFile('lol1.txt');
+//editFile('lol','lol');
 // readingFromConsole();
 // runSubprocess();
 // beforeExit();
@@ -27,13 +28,19 @@ createFile('lol','lol');
 //CORE
 
 //Functions, all activity of current process
-function createFile(fileName,content){
+function editFile(fileName,content){
   if(typeof fileName ===  "string"  && typeof content == "string"){
-    fs.writeFile(`${fileName}.txt`,content,(err) => {
+    fs.writeFile(fileName,content,(err) => {
       if (err) throw err;
       console.log('The file has been saved!');
       });
   }
+}
+function createFile(fileName){
+  fs.open(fileName, 'w', function (err, file) {
+    if (err) throw err;
+    console.log('File created!');
+  });
 }
 
 function readingFromConsole() {
