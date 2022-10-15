@@ -57,9 +57,10 @@ let req = http.request(options, (res)=>{
   });
 
   res.on('end', () => {
-    console.log(data);
+    console.log(`respond from server: ${data}`);
   });
   });
+  //writing data to server
 req.write("hellooo");
 req.end();
 }
@@ -86,13 +87,13 @@ http.request(options, (res)=>{
 function createHttpServer() {
   //create new server listining oin 8090
   server = http.createServer((req, res) => {
-    
+    //server log request
     let data='';
     req.on('data', (chunk) => {
       data+=chunk});
     req.on('end', () => {
-      console.log(`response on request: ${data}`);
-      
+      console.log(`request to server: ${data}`);
+    //server respond
     });
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(
@@ -108,11 +109,10 @@ function createHttpServer() {
   });
   //event on request
   server.on("request", (request,response) => {
-    const { method, url } = request;
+    const { method} = request;
     requestAmount ++;
     responseAmount++;
     console.log(method);
-    console.log(url);
     console.log(`request:${requestAmount}`)
     console.log(`response:${responseAmount}`)
   });
