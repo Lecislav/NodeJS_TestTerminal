@@ -7,20 +7,35 @@ const readline = require("node:readline");
 //object to run  subprocesses
 const childprocess = require("node:child_process");
 
+//object to interact with file system
+const fs = require('node:fs');
+
 //variables
 let rl; //readline Interface
 let child; //subprocess
 let cursorPosition;
+let fileName;
 //variables
 
 //CORE
-readingFromConsole();
-runSubprocess();
-beforeExit();
-repeatedFunction();
+
+createFile('lol','lol');
+// readingFromConsole();
+// runSubprocess();
+// beforeExit();
+// repeatedFunction();
 //CORE
 
 //Functions, all activity of current process
+function createFile(fileName,content){
+  if(typeof fileName ===  "string"  && typeof content == "string"){
+    fs.writeFile(`${fileName}.txt`,content,(err) => {
+      if (err) throw err;
+      console.log('The file has been saved!');
+      });
+  }
+}
+
 function readingFromConsole() {
   //Interfaces (in/out stream etc.)
   rl = readline.createInterface({
