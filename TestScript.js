@@ -198,3 +198,6 @@ function repeatedFunction() {
     }
   }, 5000); //repetition time = 5 sec
 }
+function copyArray(array){
+  return [...array];//3 dot extraxt content of array or object
+}
