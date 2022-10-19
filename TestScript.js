@@ -30,6 +30,8 @@ const person = {
   name: "Mateusz",
   age: 28,
 };
+
+const hobbies=['sport','music'];
 //variables
 
 //CORE
@@ -44,6 +46,7 @@ const person = {
 // beforeExit();
 // repeatedFunction();
 destructuringFunction(person);
+destructuringFunctionArray();
 //CORE
 
 //Functions, all activity of current process
@@ -217,4 +220,9 @@ function destructuringFunction({ name, age }) {
   //extracting desired data from the object
   console.log(name);
   console.log(age);
+}
+function destructuringFunctionArray(){
+  const [hobby1,hobby2]=hobbies;
+  console.log(hobby1);
+  console.log(hobby2);
 }
