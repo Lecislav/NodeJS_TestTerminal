@@ -47,6 +47,13 @@ const hobbies=['sport','music'];
 // repeatedFunction();
 destructuringFunction(person);
 destructuringFunctionArray();
+asynchronicFunction().then(text=>{
+  console.log(text);
+  return asynchronicFunction();
+}).then(text1=>{
+  console.log(text1);
+  return asynchronicFunction();
+})
 //CORE
 
 //Functions, all activity of current process
@@ -225,4 +232,12 @@ function destructuringFunctionArray(){
   const [hobby1,hobby2]=hobbies;
   console.log(hobby1);
   console.log(hobby2);
+}
+function asynchronicFunction(){
+  const promise= new Promise((resolve, reject) => {
+    setTimeout(()=>{
+      resolve('asyn activity');
+    },1000)
+  });
+  return promise;
 }
