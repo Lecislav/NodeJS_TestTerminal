@@ -34,6 +34,7 @@ const person = {
 const hobbies=['sport','music'];
 //variables
 
+
 //CORE
 
 //createHttpServer();
@@ -45,15 +46,16 @@ const hobbies=['sport','music'];
 // runSubprocess();
 // beforeExit();
 // repeatedFunction();
-destructuringFunction(person);
-destructuringFunctionArray();
-asynchronicFunction().then(text=>{
-  console.log(text);
-  return asynchronicFunction();
-}).then(text1=>{
-  console.log(text1);
-  return asynchronicFunction();
-})
+// destructuringFunction(person);
+// destructuringFunctionArray();
+// asynchronicFunction().then(text=>{
+//   console.log(text);
+//   return asynchronicFunction();
+// }).then(text1=>{
+//   console.log(text1);
+//   return asynchronicFunction();
+// })
+
 //CORE
 
 //Functions, all activity of current process
