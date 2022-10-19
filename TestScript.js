@@ -201,3 +201,6 @@ function repeatedFunction() {
 function copyArray(array){
   return [...array];//3 dot extraxt content of array or object
 }
+function createArray(...args){// 3 dots  merge multiple arguments
+  return args;
+}
