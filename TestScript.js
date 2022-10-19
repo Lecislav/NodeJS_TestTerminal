@@ -22,9 +22,14 @@ let child; //subprocess
 let fileName;
 
 let server;
-let connectioAmount=0;
-let requestAmount=0;
-let responseAmount=0;
+let connectioAmount = 0;
+let requestAmount = 0;
+let responseAmount = 0;
+
+const person = {
+  name: "Mateusz",
+  age: 28,
+};
 //variables
 
 //CORE
@@ -38,62 +43,65 @@ let responseAmount=0;
 // runSubprocess();
 // beforeExit();
 // repeatedFunction();
+destructuringFunction(person);
 //CORE
 
 //Functions, all activity of current process
 
-function httpPostRequest(){
+function httpPostRequest() {
   let options = {
-    host: 'localhost',
+    host: "localhost",
     port: 8090,
-    method: 'POST'
+    method: "POST",
   };
 
-let req = http.request(options, (res)=>{
-  let data='';
+  let req = http.request(options, (res) => {
+    let data = "";
 
-  res.on('data', (chunk)=> {
-    data += chunk;
-  });
+    res.on("data", (chunk) => {
+      data += chunk;
+    });
 
-  res.on('end', () => {
-    console.log(`respond from server: ${data}`);
-  });
+    res.on("end", () => {
+      console.log(`respond from server: ${data}`);
+    });
   });
   //writing data to server
-req.write("hellooo");
-req.end();
+  req.write("hellooo");
+  req.end();
 }
-function httpGetRequest(){
+function httpGetRequest() {
   let options = {
-    host: 'localhost',
+    host: "localhost",
     port: 8090,
-    method: 'GET'
+    method: "GET",
   };
 
-http.request(options, (res)=>{
-  let data='';
+  http
+    .request(options, (res) => {
+      let data = "";
 
-  res.on('data', (chunk)=> {
-    data += chunk;
-  });
+      res.on("data", (chunk) => {
+        data += chunk;
+      });
 
-  res.on('end', () => {
-    console.log(data);
-  });
-  }).end();
-
+      res.on("end", () => {
+        console.log(data);
+      });
+    })
+    .end();
 }
 function createHttpServer() {
   //create new server listining oin 8090
   server = http.createServer((req, res) => {
     //server log request
-    let data='';
-    req.on('data', (chunk) => {
-      data+=chunk});
-    req.on('end', () => {
+    let data = "";
+    req.on("data", (chunk) => {
+      data += chunk;
+    });
+    req.on("end", () => {
       console.log(`request to server: ${data}`);
-    //server respond
+      //server respond
     });
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(
@@ -105,16 +113,16 @@ function createHttpServer() {
   //event on connection
   server.on("connection", (socket) => {
     connectioAmount++;
-    console.log(`connection:${connectioAmount}`)
+    console.log(`connection:${connectioAmount}`);
   });
   //event on request
-  server.on("request", (request,response) => {
-    const { method} = request;
-    requestAmount ++;
+  server.on("request", (request, response) => {
+    const { method } = request;
+    requestAmount++;
     responseAmount++;
     console.log(method);
-    console.log(`request:${requestAmount}`)
-    console.log(`response:${responseAmount}`)
+    console.log(`request:${requestAmount}`);
+    console.log(`response:${responseAmount}`);
   });
   server.listen(8090);
 }
@@ -198,9 +206,15 @@ function repeatedFunction() {
     }
   }, 5000); //repetition time = 5 sec
 }
-function copyArray(array){
-  return [...array];//3 dot extraxt content of array or object
+function copyArray(array) {
+  return [...array]; //3 dot extraxt content of array or object
 }
-function createArray(...args){// 3 dots  merge multiple arguments
+function createArray(...args) {
+  // 3 dots  merge multiple arguments
   return args;
+}
+function destructuringFunction({ name, age }) {
+  //extracting desired data from the object
+  console.log(name);
+  console.log(age);
 }
