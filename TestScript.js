@@ -245,6 +245,6 @@ function asynchronicFunction(){
   });
   return promise;
 }
-function showInputAtguments(){
+function showInputArguments(){
   console.log(process.argv.slice(2));
 }
