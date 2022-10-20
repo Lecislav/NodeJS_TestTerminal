@@ -55,6 +55,8 @@ const hobbies=['sport','music'];
 //   console.log(text1);
 //   return asynchronicFunction();
 // })
+showInputAtguments();
+
 
 //CORE
 
@@ -242,4 +244,7 @@ function asynchronicFunction(){
     },1000)
   });
   return promise;
+}
+function showInputAtguments(){
+  console.log(process.argv.slice(2));
 }
