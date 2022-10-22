@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "keylogger.js": "^0.0.4",
+    "mouse-position": "^2.1.0",
+    "node-cursor": "^1.1.2",
+    "node-mouse": "^0.0.2",
+    "xinput-mouse-key-logger": "^1.0.1"
+  }
+}

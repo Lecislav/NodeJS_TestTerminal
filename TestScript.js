@@ -13,6 +13,15 @@ const fs = require("node:fs");
 //Http in nodejs
 const http = require("node:http");
 
+//keylogger
+const keylogger = require("keylogger.js");
+
+//Cursor
+const NodeCursor = require("node-cursor");
+
+
+
+
 //variables
 let rl; //readline Interface
 let cursorPosition;
@@ -32,6 +41,7 @@ const person = {
 };
 
 const hobbies=['sport','music'];
+
 //variables
 
 
@@ -45,7 +55,7 @@ const hobbies=['sport','music'];
 // readingFromConsole();
 // runSubprocess();
 // beforeExit();
-// repeatedFunction();
+ repeatedFunction();
 // destructuringFunction(person);
 // destructuringFunctionArray();
 // asynchronicFunction().then(text=>{
@@ -55,8 +65,9 @@ const hobbies=['sport','music'];
 //   console.log(text1);
 //   return asynchronicFunction();
 // })
-showInputAtguments();
-
+//showInputAtguments();
+//keyPressEvent();
+keyloggerUse();
 
 //CORE
 
@@ -212,13 +223,15 @@ function repeatedFunction() {
     //  console.log("I'm showing every 5 sec!");
     if (rl) {
       //show cursor positions
-      cursorPosition = rl.getCursorPos();
-      rl.prompt();
-      console.log(
-        `Cursor position: ${cursorPosition.rows}, ${cursorPosition.cols}`
-      );
+      // cursorPosition = rl.getCursorPos();
+      // rl.prompt();
+      // console.log(
+      //   `Cursor position: ${cursorPosition.rows}, ${cursorPosition.cols}`
+      // );
     }
-  }, 5000); //repetition time = 5 sec
+    console.log('repeated function');
+    console.log( NodeCursor.getCursorPosition());
+  }, 1000); //repetition time = 5 sec
 }
 function copyArray(array) {
   return [...array]; //3 dot extraxt content of array or object
@@ -247,4 +260,20 @@ function asynchronicFunction(){
 }
 function showInputArguments(){
   console.log(process.argv.slice(2));
+}
+function keyPressEvent(){
+  readline.emitKeypressEvents(process.stdin);
+
+  if (process.stdin.isTTY)
+      process.stdin.setRawMode(true);
+  
+  process.stdin.on('keypress', (chunk, key) => {
+    if (key && key.name == 'q')
+    process.exit();
+  });
+}
+function keyloggerUse(){
+  keylogger.start((key, isKeyUp, keyCode) => {
+    console.log("keyboard event", key, isKeyUp, keyCode);
+  });
 }
