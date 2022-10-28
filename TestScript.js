@@ -55,7 +55,7 @@ const hobbies=['sport','music'];
 // readingFromConsole();
 // runSubprocess();
 // beforeExit();
- repeatedFunction();
+ //repeatedFunction();
 // destructuringFunction(person);
 // destructuringFunctionArray();
 // asynchronicFunction().then(text=>{
@@ -67,7 +67,7 @@ const hobbies=['sport','music'];
 // })
 //showInputAtguments();
 //keyPressEvent();
-keyloggerUse();
+//keyloggerUse();
 
 //CORE
 
