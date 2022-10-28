@@ -69,6 +69,8 @@ const hobbies=['sport','music'];
 //keyPressEvent();
 //keyloggerUse();
 
+shoInputArgumentsInFuntion(1,2,'dsad','lol');
+
 //CORE
 
 //Functions, all activity of current process
@@ -276,4 +278,9 @@ function keyloggerUse(){
   keylogger.start((key, isKeyUp, keyCode) => {
     console.log("keyboard event", key, isKeyUp, keyCode);
   });
+}
+function shoInputArgumentsInFuntion(){
+  for(let i=0;i<arguments.length;i++){
+    console.log(arguments[i]);
+  }
 }
