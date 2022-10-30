@@ -4,6 +4,7 @@
     "mouse-position": "^2.1.0",
     "node-cursor": "^1.1.2",
     "node-mouse": "^0.0.2",
+    "nodemon": "^2.0.20",
     "xinput-mouse-key-logger": "^1.0.1"
   },
   "scripts": {
