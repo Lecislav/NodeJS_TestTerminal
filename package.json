@@ -5,5 +5,10 @@
     "node-cursor": "^1.1.2",
     "node-mouse": "^0.0.2",
     "xinput-mouse-key-logger": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon TestScript.js",
+    "start-server": "node TestScript.js"
   }
 }
