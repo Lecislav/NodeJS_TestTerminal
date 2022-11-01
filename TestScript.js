@@ -74,7 +74,7 @@ let app;
 //keyloggerUse();
 //expressServer();
 shoInputArgumentsInFuntion(1,2,'dsad','lol');
-
+//mouseCursorPositionRepeated();
 //CORE
 
 //Functions, all activity of current process
@@ -290,5 +290,17 @@ function shoInputArgumentsInFuntion(){
 }
 function expressServer(){
   app = express();
-  app.listen(3000);
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use("/", (req, res, next) => {
+    console.log("im in middleware");
+    res.send("<h1>Hello</h1>");
+    next();
+  });
+  app.listen(3001);
+}
+function mouseCursorPositionRepeated() {
+  setInterval(() => {
+    console.log("repeated function");
+    console.log(NodeCursor.getCursorPosition());
+  }, 1000); //repetition time = 5 sec
 }
