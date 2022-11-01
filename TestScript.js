@@ -19,7 +19,9 @@ const keylogger = require("keylogger.js");
 //Cursor
 const NodeCursor = require("node-cursor");
 
-
+//express
+const express = require("express");
+const bodyParser = require("body-parser");
 
 
 //variables
@@ -41,6 +43,8 @@ const person = {
 };
 
 const hobbies=['sport','music'];
+
+let app;
 
 //variables
 
@@ -68,7 +72,7 @@ const hobbies=['sport','music'];
 //showInputAtguments();
 //keyPressEvent();
 //keyloggerUse();
-
+//expressServer();
 shoInputArgumentsInFuntion(1,2,'dsad','lol');
 
 //CORE
@@ -283,4 +287,8 @@ function shoInputArgumentsInFuntion(){
   for(let i=0;i<arguments.length;i++){
     console.log(arguments[i]);
   }
+}
+function expressServer(){
+  app = express();
+  app.listen(3000);
 }
