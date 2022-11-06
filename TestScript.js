@@ -74,6 +74,7 @@ let app;
 //keyloggerUse();
 //expressServer();
 shoInputArgumentsInFuntion(1,2,'dsad','lol');
+//console.log(copyObject(person));
 //mouseCursorPositionRepeated();
 //CORE
 
@@ -303,4 +304,7 @@ function mouseCursorPositionRepeated() {
     console.log("repeated function");
     console.log(NodeCursor.getCursorPosition());
   }, 1000); //repetition time = 5 sec
+}
+function copyObject(obj){
+  if((typeof obj) === "object")return Object.assign({},obj);
 }
