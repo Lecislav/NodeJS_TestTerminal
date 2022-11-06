@@ -305,6 +305,6 @@ function mouseCursorPositionRepeated() {
     console.log(NodeCursor.getCursorPosition());
   }, 1000); //repetition time = 5 sec
 }
-function copyObject(obj){
+function copyObject(obj){//shallow copy
   if((typeof obj) === "object")return Object.assign({},obj);
 }
