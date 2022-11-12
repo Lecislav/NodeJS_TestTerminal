@@ -74,6 +74,7 @@ let app;
 //keyloggerUse();
 //expressServer();
 shoInputArgumentsInFuntion(1,2,'dsad','lol');
+destructuringObjectNewName();
 //console.log(copyObject(person));
 //mouseCursorPositionRepeated();
 //CORE
@@ -307,4 +308,8 @@ function mouseCursorPositionRepeated() {
 }
 function copyObject(obj){//shallow copy
   if((typeof obj) === "object")return Object.assign({},obj);
+}
+function destructuringObjectNewName(){
+  const {name: nname, age: agge}= person;
+  console.log(nname,agge);
 }
