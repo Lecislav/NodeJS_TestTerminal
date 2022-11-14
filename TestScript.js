@@ -73,8 +73,9 @@ let app;
 //keyPressEvent();
 //keyloggerUse();
 //expressServer();
-shoInputArgumentsInFuntion(1,2,'dsad','lol');
-destructuringObjectNewName();
+//shoInputArgumentsInFuntion(1,2,'dsad','lol');
+//destructuringObjectNewName();
+destructuringObjectMutatingVariables(person);
 //console.log(copyObject(person));
 //mouseCursorPositionRepeated();
 //CORE
@@ -312,4 +313,10 @@ function copyObject(obj){//shallow copy
 function destructuringObjectNewName(){
   const {name: nname, age: agge}= person;
   console.log(nname,agge);
+}
+function destructuringObjectMutatingVariables(obj) {
+  let name = "Dawid";
+  let age = 35;
+  ({ name, age } = obj);
+  console.log(name, age);
 }
