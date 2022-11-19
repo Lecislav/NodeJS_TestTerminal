@@ -24,7 +24,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 
-//variables
+//***variables***
 let rl; //readline Interface
 let cursorPosition;
 
@@ -46,10 +46,10 @@ const hobbies=['sport','music'];
 
 let app;
 
-//variables
+//***variables***
 
 
-//CORE
+//***CORE***
 
 //createHttpServer();
 //httpGetRequest();
@@ -78,10 +78,10 @@ let app;
 destructuringObjectMutatingVariables(person);
 //console.log(copyObject(person));
 //mouseCursorPositionRepeated();
-//CORE
 
-//Functions, all activity of current process
+//***CORE***
 
+//***Functions, all activity of current process***
 function httpPostRequest() {
   let options = {
     host: "localhost",
