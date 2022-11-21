@@ -76,7 +76,8 @@ let app;
 //destructuringObjectMutatingVariables(person);
 //console.log(copyObject(person));
 //mouseCursorPositionRepeated();
-restPatternSimpleExample();
+//restPatternSimpleExampleArray();
+restPatternSimpleExampleObject();
 //<<<CORE<<<
 
 //***Functions, all activity of current process***
@@ -318,7 +319,24 @@ function destructuringObjectMutatingVariables(obj) {
   ({ name, age } = obj);
   console.log(name, age);
 }
-function restPatternSimpleExample(){
+function restPatternSimpleExampleArray(){
   const[a,b, ...others]=[1,2,3,4,5];
   console.log(a,b,others);
+}
+function restPatternSimpleExampleObject(){
+
+  const names={
+    name1:'lol1',
+    name2:'lol2',
+    name3:'lol3'
+  }
+  const {name2, ...others}=names;
+  //console.log(name2,others);
+  function lol ({name1,name3},...others){
+    console.log(name1);
+    console.log(name3);
+    console.log(others);
+  }
+  lol(names,1,2,3,2323,2);
+
 }
