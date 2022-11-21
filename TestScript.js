@@ -24,7 +24,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 
-//***variables***
+//>>>>variables>>>
 let rl; //readline Interface
 let cursorPosition;
 
@@ -45,12 +45,10 @@ const person = {
 const hobbies=['sport','music'];
 
 let app;
+//<<<variables<<<
 
-//***variables***
 
-
-//***CORE***
-
+//>>>CORE>>>
 //createHttpServer();
 //httpGetRequest();
 //httpPostRequest();
@@ -75,11 +73,11 @@ let app;
 //expressServer();
 //shoInputArgumentsInFuntion(1,2,'dsad','lol');
 //destructuringObjectNewName();
-destructuringObjectMutatingVariables(person);
+//destructuringObjectMutatingVariables(person);
 //console.log(copyObject(person));
 //mouseCursorPositionRepeated();
-
-//***CORE***
+restPatternSimpleExample();
+//<<<CORE<<<
 
 //***Functions, all activity of current process***
 function httpPostRequest() {
@@ -319,4 +317,8 @@ function destructuringObjectMutatingVariables(obj) {
   let age = 35;
   ({ name, age } = obj);
   console.log(name, age);
+}
+function restPatternSimpleExample(){
+  const[a,b, ...others]=[1,2,3,4,5];
+  console.log(a,b,others);
 }
