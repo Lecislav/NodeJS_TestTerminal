@@ -77,7 +77,8 @@ let app;
 //console.log(copyObject(person));
 //mouseCursorPositionRepeated();
 //restPatternSimpleExampleArray();
-restPatternSimpleExampleObject();
+//restPatternSimpleExampleObject();
+loopingArrays();
 //<<<CORE<<<
 
 //***Functions, all activity of current process***
@@ -339,4 +340,10 @@ function restPatternSimpleExampleObject(){
   }
   lol(names,1,2,3,2323,2);
 
+}
+function loopingArrays(){
+  const arr =[1,2,3,4,5];
+  for(const item of arr){
+    console.log(item);
+  }
 }
