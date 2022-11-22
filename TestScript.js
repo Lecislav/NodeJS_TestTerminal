@@ -78,7 +78,8 @@ let app;
 //mouseCursorPositionRepeated();
 //restPatternSimpleExampleArray();
 //restPatternSimpleExampleObject();
-loopingArrays();
+//loopingArrays();
+optionalChaining();
 //<<<CORE<<<
 
 //***Functions, all activity of current process***
@@ -346,4 +347,22 @@ function loopingArrays(){
   for(const item of arr){
     console.log(item);
   }
+}
+function optionalChaining(){
+
+  const obj={
+    name:'name',
+    subobj:{
+      name:'subobjname'
+    }
+  }
+console.log(obj);
+console.log(obj.subobj?.name);
+console.log(obj.subobj?.subsubobj);
+console.log(obj.subobj?.subsubobj?.subsbsbsbsbsobj);
+console.log(obj.show?.(1,2));
+obj.obj={
+  name:'lol'
+}
+console.log(obj.obj);
 }
