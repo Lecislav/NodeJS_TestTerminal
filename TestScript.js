@@ -74,7 +74,10 @@ let app;
 //restPatternSimpleExampleArray();
 //restPatternSimpleExampleObject();
 //loopingArrays();
-loopingObjects();
+//loopingObjects();
+//sets();
+maps();
+
 //<<<CORE<<<
 
 //***Functions, all activity of current process***
@@ -380,4 +383,36 @@ function loopingObjects(){
   for (const name of Object.entries(obj)) {
     console.log(name);
   }
+}
+function sets(){
+  const set = new Set([
+    'lol1',
+    'lol1',
+    'lol2',
+    'lol2',
+    'lol3',
+  ]);
+
+console.log(set);
+
+for( const x of set ){
+  console.log(x);
+}
+console.log(set.has('lol3'));
+set.delete('lol1');
+console.log(set);
+console.log(...set);
+
+}
+function maps(){
+  const map = new Map();
+map.set('name', true);
+map.set(2,3213);
+map.set('lol','lolollo');
+map.set(true, 1);
+map.set(true, 2);
+for(const x of map){
+  console.log(x);
+}
+console.log(map.get(true));
 }
