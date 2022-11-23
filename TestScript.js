@@ -22,6 +22,7 @@ const NodeCursor = require("node-cursor");
 //express
 const express = require("express");
 const bodyParser = require("body-parser");
+const { type } = require("node:os");
 
 
 //>>>>variables>>>
@@ -60,13 +61,7 @@ let app;
  //repeatedFunction();
 // destructuringFunction(person);
 // destructuringFunctionArray();
-// asynchronicFunction().then(text=>{
-//   console.log(text);
-//   return asynchronicFunction();
-// }).then(text1=>{
-//   console.log(text1);
-//   return asynchronicFunction();
-// })
+//asynchronicFunction();
 //showInputAtguments();
 //keyPressEvent();
 //keyloggerUse();
@@ -79,7 +74,7 @@ let app;
 //restPatternSimpleExampleArray();
 //restPatternSimpleExampleObject();
 //loopingArrays();
-optionalChaining();
+loopingObjects();
 //<<<CORE<<<
 
 //***Functions, all activity of current process***
@@ -264,6 +259,7 @@ function asynchronicFunction(){
   const promise= new Promise((resolve, reject) => {
     setTimeout(()=>{
       resolve('asyn activity');
+      console.log('assync');
     },1000)
   });
   return promise;
@@ -365,4 +361,23 @@ obj.obj={
   name:'lol'
 }
 console.log(obj.obj);
+}
+function loopingObjects(){
+  const obj = {
+    name1: "lol1",
+    name2: "lol2",
+    name3: "lol3",
+  };
+  //KEYS
+  for (const name of Object.keys(obj)) {
+    console.log(name);
+  }
+  //VALUES
+  for (const name of Object.values(obj)) {
+    console.log(name);
+  }
+  //ENTRIES
+  for (const name of Object.entries(obj)) {
+    console.log(name);
+  }
 }
