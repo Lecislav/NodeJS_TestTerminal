@@ -76,7 +76,8 @@ let app;
 //loopingArrays();
 //loopingObjects();
 //sets();
-maps();
+//maps();
+workingWithStrings();
 
 //<<<CORE<<<
 
@@ -431,4 +432,19 @@ const personMap= new Map(Object.entries(person));
 console.log(personMap);
 console.log('unpacking');
 console.log(...map);
+}
+function workingWithStrings(){
+
+const napis ='losowystring';
+for(const x of napis){
+  console.log(x);
+}
+console.log(napis.length);
+console.log(napis.indexOf('s'));
+console.log(napis.lastIndexOf('s'));
+console.log(napis.slice(6));
+console.log(napis.slice(0,-6));
+console.log(new String('lol'));
+console.log(typeof new String("lol"));
+console.log(typeof new String("lol").slice(1));// always return primitive type
 }
