@@ -415,4 +415,20 @@ for(const x of map){
   console.log(x);
 }
 console.log(map.get(true));
+
+const newMap = new Map([
+  ['1','LOL1'],
+  ['2','lol2'],
+  ['3','lol3']
+]);
+
+for(const x of newMap){
+  console.log(x);
+}
+console.log(newMap.get('3'));
+
+const personMap= new Map(Object.entries(person));
+console.log(personMap);
+console.log('unpacking');
+console.log(...map);
 }
