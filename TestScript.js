@@ -447,4 +447,9 @@ console.log(napis.slice(0,-6));
 console.log(new String('lol'));
 console.log(typeof new String("lol"));
 console.log(typeof new String("lol").slice(1));// always return primitive type
+console.log(napis.toLowerCase());
+console.log(napis.toUpperCase());
+console.log(napis.replace(/o/g,'O'));
+console.log(napis.includes('string'));
+console.log(napis.startsWith('losowy'));
 }
