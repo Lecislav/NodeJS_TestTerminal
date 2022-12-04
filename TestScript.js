@@ -452,4 +452,11 @@ console.log(napis.toUpperCase());
 console.log(napis.replace(/o/g,'O'));
 console.log(napis.includes('string'));
 console.log(napis.startsWith('losowy'));
+console.log(napis.split('o'));
+const czlowiek= "mateusz lewczuk";
+const [imie,nazwisko]=czlowiek.split(' ');
+console.log(imie,nazwisko);
+console.log(['Pan','Mateusz','Lewczuk'].join(' '));
+console.log('lol'.padStart(10,'_').padEnd(15,'_'));
+console.log('lol'.repeat(5));
 }
