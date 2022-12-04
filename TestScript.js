@@ -77,7 +77,9 @@ let app;
 //loopingObjects();
 //sets();
 //maps();
-workingWithStrings();
+//workingWithStrings();
+console.log(functionWithDefaulValues(undefined));
+
 
 //<<<CORE<<<
 
@@ -459,4 +461,7 @@ console.log(imie,nazwisko);
 console.log(['Pan','Mateusz','Lewczuk'].join(' '));
 console.log('lol'.padStart(10,'_').padEnd(15,'_'));
 console.log('lol'.repeat(5));
+}
+function functionWithDefaulValues(value ='default value'){
+  return value;
 }
