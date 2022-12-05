@@ -65,7 +65,7 @@ let app;
 //showInputAtguments();
 //keyPressEvent();
 //keyloggerUse();
-//expressServer();
+//expressServer(); 
 //shoInputArgumentsInFuntion(1,2,'dsad','lol');
 //destructuringObjectNewName();
 //destructuringObjectMutatingVariables(person);
@@ -78,8 +78,10 @@ let app;
 //sets();
 //maps();
 //workingWithStrings();
-console.log(functionWithDefaulValues(undefined));
+//console.log(functionWithDefaulValues.name);
 
+const fun=functionReturningFunction('lol');
+fun('lol1');
 
 //<<<CORE<<<
 
@@ -464,4 +466,9 @@ console.log('lol'.repeat(5));
 }
 function functionWithDefaulValues(value ='default value'){
   return value;
+}
+function functionReturningFunction(sth){
+  return function(sth2){
+    console.log(sth,sth2);
+  }
 }
