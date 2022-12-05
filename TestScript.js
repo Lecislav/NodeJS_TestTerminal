@@ -23,6 +23,7 @@ const NodeCursor = require("node-cursor");
 const express = require("express");
 const bodyParser = require("body-parser");
 const { type } = require("node:os");
+const internal = require("node:stream");
 
 
 //>>>>variables>>>
@@ -80,8 +81,14 @@ let app;
 //workingWithStrings();
 //console.log(functionWithDefaulValues.name);
 
-const fun=functionReturningFunction('lol');
-fun('lol1');
+// const fun=functionReturningFunction('lol');
+// fun('lol1');
+// functionReturningFunction('hej')('hello');
+
+
+callMethod();
+
+
 
 //<<<CORE<<<
 
@@ -468,7 +475,23 @@ function functionWithDefaulValues(value ='default value'){
   return value;
 }
 function functionReturningFunction(sth){
-  return function(sth2){
+  return (sth2)=>{
     console.log(sth,sth2);
   }
+}
+function callMethod(){
+  const person ={
+    name: 'mati',
+    intr(str){
+      console.log(this.name);
+      console.log(str);
+    }
+  };
+
+  const person2 = {
+    name: "mati2",
+  };
+
+  const func1 = person.intr;
+  func1.call(person2,'lol')
 }
