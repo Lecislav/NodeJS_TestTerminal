@@ -80,14 +80,11 @@ let app;
 //maps();
 //workingWithStrings();
 //console.log(functionWithDefaulValues.name);
-
 // const fun=functionReturningFunction('lol');
 // fun('lol1');
 // functionReturningFunction('hej')('hello');
-
-
-callMethod();
-
+//callMethod();
+bindFunction();
 
 
 //<<<CORE<<<
@@ -494,4 +491,21 @@ function callMethod(){
 
   const func1 = person.intr;
   func1.call(person2,'lol')
+}
+function bindFunction(){
+  const person = {
+    name: "mati",
+    intr(str) {
+      console.log(this.name);
+      console.log(str);
+    },
+  };
+
+  const person2 = {
+    name: "mati2",
+  };
+
+  const func1 = person.intr;
+  const newFunc= func1.bind(person2, "lol");
+    newFunc();
 }
