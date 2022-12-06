@@ -24,6 +24,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { type } = require("node:os");
 const internal = require("node:stream");
+const { dir } = require("node:console");
 
 
 //>>>>variables>>>
@@ -85,7 +86,8 @@ let app;
 // functionReturningFunction('hej')('hello');
 //callMethod();
 //bindFunction();
-  immiediatelyInvokedFunctionExpression();
+//  immiediatelyInvokedFunctionExpression();
+closures();
 
 //<<<CORE<<<
 
@@ -513,4 +515,20 @@ function immiediatelyInvokedFunctionExpression(){
   (function(){
     console.log('IIFE');
   })();
+}
+function closures(){
+  
+  const func =function(){
+    let amount=0;
+    return ()=>{
+      console.log(++amount);
+    }
+  }
+
+  const closureFunc = func();
+  closureFunc();
+  closureFunc();
+  closureFunc();
+  console.dir(closureFunc);
+  console.dir(func)
 }
