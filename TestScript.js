@@ -84,8 +84,8 @@ let app;
 // fun('lol1');
 // functionReturningFunction('hej')('hello');
 //callMethod();
-bindFunction();
-
+//bindFunction();
+  immiediatelyInvokedFunctionExpression();
 
 //<<<CORE<<<
 
@@ -508,4 +508,9 @@ function bindFunction(){
   const func1 = person.intr;
   const newFunc= func1.bind(person2, "lol");
     newFunc();
+}
+function immiediatelyInvokedFunctionExpression(){
+  (function(){
+    console.log('IIFE');
+  })();
 }
