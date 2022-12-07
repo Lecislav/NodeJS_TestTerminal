@@ -89,7 +89,9 @@ let app;
 //bindFunction();
 //  immiediatelyInvokedFunctionExpression();
 //closures();
-moreClosures();
+//moreClosures();
+workingWithArrays();
+
 //<<<CORE<<<
 
 //***Functions, all activity of current process***
@@ -559,6 +561,27 @@ function moreClosures(){
   console.log(global.sto);
 }
 function workingWithArrays(){
-  
+  let array =[0,1,2,3,4,5,6,7,8,9];
+  console.log(`array : ${array}`);
+  console.log(`array slice(2): ${array.slice(2)}`);
+  console.log(`array slice(2,4): ${array.slice(2,4)}`);
+  console.log(`array slice(-3): ${array.slice(-3)}`);
+  console.log(`array slice(1,-1): ${array.slice(1,-1)}`);
+  console.log(`array slice(): ${array.slice()}`);
+  console.log();
+  console.log(`array splice(2): ${array.splice(1,3)}`);
+  console.log(`original array after splice: ${array}`);
+  console.log();
+  array = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
+  console.log(`array reverse ${array.reverse()}`);
+  array.reverse();
+  console.log(`array concat [10,11]: ${array.concat([10,11])}`);
+  console.log(`array join(+): ${array.join('+')}`);
+  console.log(`array at(2): ${array.at(2)}`);
+  console.log(`array at(-2): ${array.at(-2)}`);
+  console.log(`array forEach: concat('+'`);
+  array.forEach((x,index,array)=>{console.log(x, "+",index,...array)})
+
+
 }
 
