@@ -557,4 +557,8 @@ function moreClosures(){
   h();
   f();
   console.log(global.sto);
-  }
+}
+function workingWithArrays(){
+  
+}
+
