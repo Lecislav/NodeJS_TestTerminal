@@ -39,6 +39,7 @@ let server;
 let connectioAmount = 0;
 let requestAmount = 0;
 let responseAmount = 0;
+global.sto = 100;
 
 const person = {
   name: "Mateusz",
@@ -87,8 +88,8 @@ let app;
 //callMethod();
 //bindFunction();
 //  immiediatelyInvokedFunctionExpression();
-closures();
-
+//closures();
+moreClosures();
 //<<<CORE<<<
 
 //***Functions, all activity of current process***
@@ -532,3 +533,28 @@ function closures(){
   console.dir(closureFunc);
   console.dir(func)
 }
+function moreClosures(){
+  const sto=120;
+  let f;
+
+  const g = function(){
+    const a =23;
+
+    f=function(){
+      console.log(a*2);
+    }
+  }
+    const h = function(){
+    const b =777;
+
+    f=function(){
+      console.log(b*2);
+    }
+  
+  }
+  g();
+  f();
+  h();
+  f();
+  console.log(global.sto);
+  }
