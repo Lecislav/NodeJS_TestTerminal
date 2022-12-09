@@ -581,7 +581,22 @@ function workingWithArrays(){
   console.log(`array at(-2): ${array.at(-2)}`);
   console.log(`array forEach: concat('+'`);
   array.forEach((x,index,array)=>{console.log(x, "+",index,...array)})
+  console.log(`array.map(value *2): ${array.map((value)=>{
+    return value * 2;
+  })} original array: ${array}`);
+  console.log( `array.filter(value %2): ${array.filter((value) => value % 2 == 0 )} original array: ${array}`);
+  console.log( `array.reduce(value %2): ${array.reduce((pre, cur) => {
+    console.log(pre+cur);
+    return pre + cur
+  } )} original array: ${array}`);
 
+  console.log( `array.map(value *3).filter(%2).reduce(pre+curr): ${array.map((value) => value*3)
+        .filter(value=> value%2==0)
+        .reduce((pre,curr)=>pre+curr)
+      } original array: ${array}`);
+  console.log(`array at(-2): ${array}`);
+  console.log(`array find(ele %2 == 1): ${array.find(ele=> ele %2 == 1)}`);
 
+  
 }
 
