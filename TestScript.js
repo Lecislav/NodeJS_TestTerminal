@@ -603,9 +603,10 @@ function workingWithArrays(){
   console.log(`array sort(b-a) ${array.sort((a,b)=>b-a)}`)
   console.log(`array includes(-100) ${array.includes(-100)}`);
   console.log(`array includes(12) ${array.includes(12)}`);
-  console.log(`array some(ele<0) ${array.some(ele=>ele<0)}`);
+  console.log(`array some(ele<0) ${array.some(ele=> ele < 0)}`);
   console.log(`array some(ele>0) ${array.some((ele) => ele > 0)}`);
-  console.log(`array every(ele>0) ${array.some((ele) => ele > 0)}`);
+  console.log(`array every(ele<0) ${array.every((ele) => ele < 0)}`);
+  console.log(`array every(ele>0) ${array.every((ele) => ele > 0)}`);
 
 
 }
