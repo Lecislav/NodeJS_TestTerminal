@@ -594,9 +594,19 @@ function workingWithArrays(){
         .filter(value=> value%2==0)
         .reduce((pre,curr)=>pre+curr)
       } original array: ${array}`);
-  console.log(`array at(-2): ${array}`);
-  console.log(`array find(ele %2 == 1): ${array.find(ele=> ele %2 == 1)}`);
+  array=[10, 17, 12, 15, 14, 13, 16, 11, 18, 19];
+  console.log(`new array: ${array}`);
+  console.log(`array find(ele %2 == 1): ${array.find((ele,index)=> index == 2)}`);
+  console.log(`array : ${array}`);
+  console.log(`array finIndex(i==12) ${array.findIndex(ele=>ele==12)}`);
+  console.log(`array sort(a-b)  ${array.sort((a, b) => a - b)}`);
+  console.log(`array sort(b-a) ${array.sort((a,b)=>b-a)}`)
+  console.log(`array includes(-100) ${array.includes(-100)}`);
+  console.log(`array includes(12) ${array.includes(12)}`);
+  console.log(`array some(ele<0) ${array.some(ele=>ele<0)}`);
+  console.log(`array some(ele>0) ${array.some((ele) => ele > 0)}`);
+  console.log(`array every(ele>0) ${array.some((ele) => ele > 0)}`);
 
-  
+
 }
 
