@@ -607,6 +607,10 @@ function workingWithArrays(){
   console.log(`array some(ele>0) ${array.some((ele) => ele > 0)}`);
   console.log(`array every(ele<0) ${array.every((ele) => ele < 0)}`);
   console.log(`array every(ele>0) ${array.every((ele) => ele > 0)}`);
+  array = [[10, 17, 12], [15, 14, 13], [16, 11], [18, 19]];
+  console.log(`new array: ${array}`);
+  console.log(`array flat(): ${array.flat()}`);
+  console.log(`array flatMap(): ${array.flatMap((ele)=>ele.join())}`);
 
 
 }
