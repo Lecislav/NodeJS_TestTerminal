@@ -614,5 +614,8 @@ function workingWithArrays(){
 }
 function multiWaysToCreateArrays(){
 
+console.log([1,2,3,4]);
+console.log(new Array(1,2,3,4));
+
 }
 
