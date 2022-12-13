@@ -90,8 +90,8 @@ let app;
 //  immiediatelyInvokedFunctionExpression();
 //closures();
 //moreClosures();
-workingWithArrays();
-
+//workingWithArrays();
+multiWaysToCreateArrays();
 //<<<CORE<<<
 
 //***Functions, all activity of current process***
@@ -611,7 +611,8 @@ function workingWithArrays(){
   console.log(`new array: ${array}`);
   console.log(`array flat(): ${array.flat()}`);
   console.log(`array flatMap(): ${array.flatMap((ele)=>ele.join())}`);
-
+}
+function multiWaysToCreateArrays(){
 
 }
 
