@@ -91,7 +91,8 @@ let app;
 //closures();
 //moreClosures();
 //workingWithArrays();
-multiWaysToCreateArrays();
+//multiWaysToCreateArrays();
+numbers();
 //<<<CORE<<<
 
 //***Functions, all activity of current process***
@@ -621,5 +622,16 @@ x.fill(1);
 console.log(x);
 console.log(Array.from({length:7},(_,i)=>Math.random()*i));
 }
+function numbers(){
 
+  console.log(0.1+0.2);
+  console.log(0.1+0.2 ===0.3);
+  console.log('23');
+  console.log(+'23');
+
+  console.log(`parsing '23xsa':${Number.parseInt('23xsa',10)}`);
+  console.log(`parsing '23.23xsa':${Number.parseFloat("23.23xsa", 10)}`);
+
+  
+}
 
