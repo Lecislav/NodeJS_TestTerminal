@@ -616,6 +616,10 @@ function multiWaysToCreateArrays(){
 
 console.log([1,2,3,4]);
 console.log(new Array(1,2,3,4));
-
+const x= new Array(7);
+x.fill(1);
+console.log(x);
+console.log(Array.from({length:7},(_,i)=>Math.random()*i));
 }
+
 
