@@ -678,6 +678,15 @@ function mathFunction() {
 }
 function dataAndTime(){
 
-console.log(new Date().getTime());
+console.log(new Date(1994,12,19,00,50,05));
+console.log(new Date(1994, 12, 19));
+console.log(new Date(0));
+const z = new Date(15367 * 24 * 60 * 60 * 1000);;
+console.log(z);
+console.log(z.getFullYear());
+console.log(z.getDay());
+console.log(z.getDate());
+console.log(z.toISOString());
+console.log(Date.now());
 
 }
