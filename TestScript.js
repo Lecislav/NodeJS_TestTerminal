@@ -14,10 +14,13 @@ const fs = require("node:fs");
 const http = require("node:http");
 
 //keylogger
-const keylogger = require("keylogger.js");
+//const keylogger = require("keylogger.js");
 
 //Cursor
-const NodeCursor = require("node-cursor");
+//const NodeCursor = require("node-cursor");
+
+//Electron
+const { app, BrowserWindow } = require("electron");
 
 //express
 const express = require("express");
@@ -48,7 +51,7 @@ const person = {
 
 const hobbies=['sport','music'];
 
-let app;
+//let app;
 //<<<variables<<<
 
 
@@ -93,6 +96,8 @@ let app;
 //workingWithArrays();
 //multiWaysToCreateArrays();
 numbers();
+//electronHelloWorld();
+
 //<<<CORE<<<
 
 //***Functions, all activity of current process***
@@ -634,4 +639,19 @@ function numbers(){
 
   
 }
+function electronHelloWorld(){
 
+const createWindow = () => {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+  });
+
+  win.loadFile("index.html");
+};
+
+app.whenReady().then(() => {
+  createWindow();
+});
+
+}
