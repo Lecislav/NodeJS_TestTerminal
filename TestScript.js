@@ -95,8 +95,9 @@ const hobbies=['sport','music'];
 //moreClosures();
 //workingWithArrays();
 //multiWaysToCreateArrays();
-numbers();
+//numbers();
 //electronHelloWorld();
+mathFunction();
 
 //<<<CORE<<<
 
@@ -654,4 +655,14 @@ app.whenReady().then(() => {
   createWindow();
 });
 
+}
+function mathFunction(){
+  console.log(`Math.sqrt(25): ${Math.sqrt(25)}`);
+  console.log(`Math.max(1,2,5,5234,32423414,123): ${Math.max(1,2,5,5234,32423414,123)}`);
+  console.log(`Math.trunc(2.12121212): ${Math.trunc(2.12121212)}`);
+  console.log(`Math.round(2.12121212): ${Math.round(2.12121212)}`);
+  console.log(`Math.round(2.92121212): ${Math.round(2.92121212)}`);
+  console.log(`(2.456).toFixed(0): ${(2.456).toFixed(0)}`);
+  console.log(`(2.456).toFixed(2): ${(2.456).toFixed(2)}`);
+  
 }
