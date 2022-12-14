@@ -693,17 +693,21 @@ console.log(new Intl.DateTimeFormat('en-GB').format(new Date()));
 console.log();
 }
 function timers(){
- const t= setTimeout((ele1,ele2)=>{
+ 
+  const t= setTimeout((ele1,ele2)=>{
    console.log(ele1,ele2);
  },3000,'hello','hi');
- const t1 = setTimeout(
-   (ele1, ele2) => {
-     console.log(ele1, ele2);
-   },
-   3000,
-   "hello",
-   "hi"
- );
+ 
+ const t1 = setTimeout((ele1, ele2) => {
+  console.log(ele1, ele2)
+  },3000,"hello","hi");
+  
   clearTimeout(t1);
+
+    const i =setInterval((ele)=>{
+      console.log(ele);
+    },2000,'hello')
+
+    clearInterval(i);
 
 }
