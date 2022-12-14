@@ -14,10 +14,10 @@ const fs = require("node:fs");
 const http = require("node:http");
 
 //keylogger
-//const keylogger = require("keylogger.js");
+const keylogger = require("keylogger.js");
 
 //Cursor
-//const NodeCursor = require("node-cursor");
+const NodeCursor = require("node-cursor");
 
 //Electron
 const { app, BrowserWindow } = require("electron");
