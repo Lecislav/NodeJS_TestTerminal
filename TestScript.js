@@ -96,7 +96,8 @@ const hobbies = ["sport", "music"];
 //numbers();
 //electronHelloWorld();
 //mathFunction();
-dataAndTime();
+//dataAndTime();
+timers();
 
 //<<<CORE<<<
 
@@ -688,5 +689,21 @@ console.log(z.getDay());
 console.log(z.getDate());
 console.log(z.toISOString());
 console.log(Date.now());
+console.log(new Intl.DateTimeFormat('en-GB').format(new Date()));
+console.log();
+}
+function timers(){
+ const t= setTimeout((ele1,ele2)=>{
+   console.log(ele1,ele2);
+ },3000,'hello','hi');
+ const t1 = setTimeout(
+   (ele1, ele2) => {
+     console.log(ele1, ele2);
+   },
+   3000,
+   "hello",
+   "hi"
+ );
+  clearTimeout(t1);
 
 }
