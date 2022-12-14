@@ -95,7 +95,8 @@ const hobbies = ["sport", "music"];
 //multiWaysToCreateArrays();
 //numbers();
 //electronHelloWorld();
-mathFunction();
+//mathFunction();
+dataAndTime();
 
 //<<<CORE<<<
 
@@ -673,5 +674,10 @@ function mathFunction() {
   console.log(`Numeric separator 15_000_000: ${15_000_000}`);
   console.log(`BigInt: ${(1232134123541234241123142124142124124n **2n)}`);//BigInt can interact only with another BigInt
 
+
+}
+function dataAndTime(){
+
+console.log(new Date().getTime());
 
 }
