@@ -730,6 +730,7 @@ function oopConstructor(){
   }
 
   mati.showName();
+  mati.showName = function(){};
   mati.showBirthYear();
   console.log(mati.__proto__);
   console.log(mati.__proto__ ===Person.prototype);
