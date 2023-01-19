@@ -97,7 +97,8 @@ const hobbies = ["sport", "music"];
 //electronHelloWorld();
 //mathFunction();
 //dataAndTime();
-timers();
+//timers();
+oopConstructor();
 
 //<<<CORE<<<
 
@@ -710,4 +711,13 @@ function timers(){
 
     clearInterval(i);
 
+}
+function oopConstructor(){
+  const Person = function(name, birthYear){
+    this.name =name;
+    this.birthYear= birthYear;
+    console.log(`new person was created: ${this.name}`);
+  }
+  const mati = new Person("mati", 1994);
+  console.log(mati instanceof Person);
 }
