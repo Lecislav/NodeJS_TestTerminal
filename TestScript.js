@@ -716,8 +716,27 @@ function oopConstructor(){
   const Person = function(name, birthYear){
     this.name =name;
     this.birthYear= birthYear;
+
     console.log(`new person was created: ${this.name}`);
   }
   const mati = new Person("mati", 1994);
   console.log(mati instanceof Person);
+
+  Person.prototype.showName = function(){
+    console.log(this.name);
+  }
+  mati.showBirthYear=function(){
+    console.log(this.birthYear);
+  }
+
+  mati.showName();
+  mati.showBirthYear();
+  console.log(mati.__proto__);
+  console.log(mati.__proto__ ===Person.prototype);
+  console.log(Person.prototype.isPrototypeOf(mati));
+  Person.prototype.species = "LOL";
+  console.log(mati.species);
+  console.log(mati.hasOwnProperty('name'));
+  console.log(mati.hasOwnProperty('species'));
+
 }
