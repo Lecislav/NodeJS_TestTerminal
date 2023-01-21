@@ -98,7 +98,8 @@ const hobbies = ["sport", "music"];
 //mathFunction();
 //dataAndTime();
 //timers();
-oopConstructor();
+//oopConstructor();
+es6Classes();
 
 //<<<CORE<<<
 
@@ -746,7 +747,23 @@ function oopConstructor(){
   console.log(`mati.__proto__.constructor: ${mati.__proto__.constructor}`);
   console.dir(mati.__proto__.constructor);
   const arr = [1,3,25,5,4,5];
-  console.log(`arr: ${arr.__proto__}`);
-
-  
+  console.log( `arr.__proto__ === Array.prototype: ${arr.__proto__ === Array.prototype}`);
+  Array.prototype.unique = function(){ // bad practice
+    return [...new Set(this)];
+  }
+  console.log(`arr.unique(): ${arr.unique()}`);
+}
+function es6Classes(){
+  class PersonCl{
+    constructor(name,birthYear){
+      this.name = name;
+      this.birthYear = birthYear;
+    }
+    hello(){
+      console.log(`hello i am ${this.name}`);
+    }
+  }
+const mati = new PersonCl('mati',1994);
+console.log(`mati: ${mati}`);
+mati.hello();
 }
