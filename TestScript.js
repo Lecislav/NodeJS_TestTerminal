@@ -732,12 +732,21 @@ function oopConstructor(){
   mati.showName();
   mati.showName = function(){};
   mati.showBirthYear();
-  console.log(mati.__proto__);
-  console.log(mati.__proto__ ===Person.prototype);
-  console.log(Person.prototype.isPrototypeOf(mati));
+  console.log(`mati.__proto__: ${mati.__proto__}`);
+  console.log(`mati.__proto__ === Person.prototype: ${mati.__proto__ === Person.prototype}`);
+  console.log(`Person.prototype.isPrototypeOf(mati): ${Person.prototype.isPrototypeOf(mati)}`);
   Person.prototype.species = "LOL";
   console.log(mati.species);
-  console.log(mati.hasOwnProperty('name'));
-  console.log(mati.hasOwnProperty('species'));
+  console.log(`mati.species: ${mati.species}`);
+  console.log(`mati.hasOwnProperty('name'): ${mati.hasOwnProperty("name")}`);
+  console.log(`mati.hasOwnProperty('species'): ${mati.hasOwnProperty('species')}`);
 
+  console.log(`mati.__proto__.__proto__: ${mati.__proto__.__proto__}`);
+  console.log( `mati.__proto__.__proto__.__proto__: ${mati.__proto__.__proto__.__proto__}`);
+  console.log(`mati.__proto__.constructor: ${mati.__proto__.constructor}`);
+  console.dir(mati.__proto__.constructor);
+  const arr = [1,3,25,5,4,5];
+  console.log(`arr: ${arr.__proto__}`);
+
+  
 }
