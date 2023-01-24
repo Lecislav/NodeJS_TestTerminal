@@ -99,7 +99,8 @@ const hobbies = ["sport", "music"];
 //dataAndTime();
 //timers();
 //oopConstructor();
-es6Classes();
+//es6Classes();
+objectDotCreate();
 
 //<<<CORE<<<
 
@@ -754,16 +755,72 @@ function oopConstructor(){
   console.log(`arr.unique(): ${arr.unique()}`);
 }
 function es6Classes(){
-  class PersonCl{
-    constructor(name,birthYear){
+  class PersonCl {
+    
+    constructor(name, birthYear) {
       this.name = name;
       this.birthYear = birthYear;
     }
-    hello(){
+
+    get name() {
+      return this._name;
+    }
+
+    set name(name) {
+      this._name = name;
+    }
+
+    get birthYear() {
+      return this._birthYear;
+    }
+    set birthYear(birthYear) {
+      this._birthYear = birthYear;
+    }
+
+    hello() {
       console.log(`hello i am ${this.name}`);
+    }
+    static description() {
+      console.log("This class Creates new persons");
     }
   }
 const mati = new PersonCl('mati',1994);
+
 console.log(`mati: ${mati}`);
 mati.hello();
+console.log(`matiname using getter: ${mati.name}`);
+mati.name = 'Mateusz';
+console.log(`mati name after using setter: ${mati.name}`);
+PersonCl.description();
+
+console.log(Object.entries(mati));
+
+console.log(mati.__proto__);
+console.log(mati.constructor.name);
+console.log(mati instanceof PersonCl);
+console.log(mati instanceof Object);
+console.log(mati.prototype);
+console.log(mati.__proto__);
+console.log(PersonCl);
+
+
+}
+function objectDotCreate(){
+    const personObject ={
+      a: 'lol',
+      b: 'lol1',
+      hello(){
+        console.log('hello');
+      }
+    }
+    //personObject.__proto__.lolek = 'lol';
+
+    const newPerson = Object.create(personObject);
+    newPerson.hello();
+    console.log(Object.entries(newPerson));
+    console.log(Object.keys(newPerson));
+    console.log(Object.entries(newPerson));
+    console.log(newPerson.a);
+    
+    console.log(newPerson.__proto__);
 }
