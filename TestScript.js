@@ -101,7 +101,9 @@ const hobbies = ["sport", "music"];
 //oopConstructor();
 //es6Classes();
 //objectDotCreate();
-inheritanceInClass();
+//inheritanceInClass();
+//inheritanceInES6();
+inheritanceObjectDotCreate();
 
 //<<<CORE<<<
 
@@ -849,4 +851,72 @@ function inheritanceInClass(){
   console.log(mati instanceof person);
   console.log(mati instanceof Object);
   mati.introduce();
+}
+function inheritanceInES6(){
+    class PersonCl {
+      constructor(name, birthYear) {
+        this.name = name;
+        this.birthYear = birthYear;
+      }
+
+      get name() {
+        return this._name;
+      }
+
+      set name(name) {
+        this._name = name;
+      }
+
+      get birthYear() {
+        return this._birthYear;
+      }
+      set birthYear(birthYear) {
+        this._birthYear = birthYear;
+      }
+
+      hello() {
+        console.log(`hello i am ${this.name}`);
+      }
+      static description() {
+        console.log("This class Creates new persons");
+      }
+    }
+    class Student extends PersonCl {
+      constructor(name, birthYear, college) {
+        super(name, birthYear);
+        this.college = college;
+      }
+      showCollege() {
+        console.log(this.college);
+      }
+      hello(){
+         console.log(`hello i'm ${this.name}`);
+      }
+    }
+
+  
+    const mati = new Student('mati',1994,'WAT');
+    mati.showCollege();
+    mati.hello();
+
+}
+function inheritanceObjectDotCreate(){
+
+      const personObject = {
+        a: "lol",
+        b: "lol1",
+        hello() {
+          console.log("hello");
+        },
+      };
+
+      const StudentProto = Object.create(personObject);
+      const mati = Object.create(StudentProto);
+
+      mati.hello();
+      console.log(mati.a);
+      console.log(mati.__proto__.__proto__);
+      console.log(StudentProto.__proto__);
+      console.log(personObject.__proto__);
+
 }
