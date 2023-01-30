@@ -100,7 +100,8 @@ const hobbies = ["sport", "music"];
 //timers();
 //oopConstructor();
 //es6Classes();
-objectDotCreate();
+//objectDotCreate();
+inheritanceInClass();
 
 //<<<CORE<<<
 
@@ -823,4 +824,29 @@ function objectDotCreate(){
     console.log(newPerson.a);
     
     console.log(newPerson.__proto__);
+}
+function inheritanceInClass(){
+  const person = function (name) {
+    this.name = name;
+  };
+  person.prototype.introduce = function () {
+    console.log(`hi, i am ${this.name}`);
+  };
+
+  const student = function (name, college) {
+    person.call(this, name);
+    this.college = college;
+  };
+
+  student.prototype = Object.create(person.prototype);
+  student.prototype.constructor = student;
+
+    console.log(`person.prototype: ${person.prototype.constructor}`);
+    console.log(`student.prototype: ${student.prototype.constructor}`);
+
+  const mati = new student("mati", "WAT");
+  console.log(mati instanceof student);
+  console.log(mati instanceof person);
+  console.log(mati instanceof Object);
+  mati.introduce();
 }
