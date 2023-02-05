@@ -1,3 +1,5 @@
+'use strict'
+
 //object managing currently script's process
 const process = require("node:process");
 
