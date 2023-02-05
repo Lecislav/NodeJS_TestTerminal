@@ -1,4 +1,4 @@
-'use strict'
+
 
 //object managing currently script's process
 const process = require("node:process");
@@ -6,7 +6,7 @@ const process = require("node:process");
 // object operating on readalbe streams
 const readline = require("node:readline");
 
-//object to run  subprocesses
+//object to run  subprocessses
 const childprocess = require("node:child_process");
 
 //object to interact with file system
@@ -22,7 +22,7 @@ const keylogger = require("keylogger.js");
 const NodeCursor = require("node-cursor");
 
 //Electron
-const { app, BrowserWindow } = require("electron");
+let { app, BrowserWindow } = require("electron");
 
 //express
 const express = require("express");
@@ -35,7 +35,7 @@ const { dir } = require("node:console");
 let rl; //readline Interface
 let cursorPosition;
 
-let child; //subprocess
+let child; //subprocesss
 
 let fileName;
 
@@ -62,7 +62,7 @@ const hobbies = ["sport", "music"];
 //createFile('lol1.txt');
 //editFile('lol','lol');
 // readingFromConsole();
-// runSubprocess();
+// runSubprocesss();
 // beforeExit();
 //repeatedFunction();
 // destructuringFunction(person);
@@ -244,14 +244,14 @@ function readingFromConsole() {
     process.exit(0);
   });
 }
-function runSubprocess() {
-  //run test subprocess
-  child = childprocess.fork(__dirname + "/child.js");
+function runSubprocesss() {
+  //run test subprocesss
+  child = childprocesss.fork(__dirname + "/child.js");
 }
 function beforeExit() {
   //task to execution before exit of process
   process.on("exit", (code) => {
-    console.log("Process exit event with code: ", code);
+    console.log("processs exit event with code: ", code);
   });
 }
 function repeatedFunction() {
@@ -931,11 +931,16 @@ function workWithClass(){
   class person {
    name = "default";
    age = 18;
+   action=[];
    _cash; //variable with underscore is convention to protect variables against unauthorised usage
+   #pin =0; // PRIVATE FIELD
+
    constructor(name,age) {
     this.name=name;
     this.age = age;
     this._cash = Math.trunc(Math.random() *1000);
+    this.pin = Math.trunc(Math.random() * 1000);
+    this.#hey();
    }
    get name() {
      return this.name;
@@ -949,12 +954,25 @@ function workWithClass(){
    set age(e) {
      this.age = e;
    }
+   addAction(e){
+    this.action.push(e);
+    return this;
+   }
+   showAction(){
+    console.log(this.action);
+   }
+   #hey(){
+    console.log("object created");
+   }
   }
 
   const mati = new person('hej',199);
   console.log(mati);
   mati.name ='lol';
   mati.age =1994;
+  //mati.#pin =12;  private field, cant be changed
   console.log(mati);
+  mati.addAction('lol').addAction('hej').addAction('lol2').showAction();
+
 
 }

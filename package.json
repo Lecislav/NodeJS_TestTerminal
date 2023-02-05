@@ -12,6 +12,7 @@
     "serialport": "^10.5.0",
     "xinput-mouse-key-logger": "^1.0.1"
   },
+      "browser": { "fs": false, "child_process": false },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon TestScript.js",
