@@ -103,7 +103,8 @@ const hobbies = ["sport", "music"];
 //objectDotCreate();
 //inheritanceInClass();
 //inheritanceInES6();
-inheritanceObjectDotCreate();
+//inheritanceObjectDotCreate();
+workWithClass();
 
 //<<<CORE<<<
 
@@ -897,6 +898,9 @@ function inheritanceInES6(){
   
     const mati = new Student('mati',1994,'WAT');
     mati.showCollege();
+    console.log(mati.birthYear);
+    mati.birthYear =1995;
+    console.log(mati.birthYear);
     mati.hello();
 
 }
@@ -915,8 +919,38 @@ function inheritanceObjectDotCreate(){
 
       mati.hello();
       console.log(mati.a);
-      console.log(mati.__proto__.__proto__);
+      // mati.prototype = mati.__proto__;
       console.log(StudentProto.__proto__);
       console.log(personObject.__proto__);
+      console.log(mati instanceof Object);
+
+}
+function workWithClass(){
+ class person {
+   name = "default";
+   age = 18;
+   constructor(name,age) {
+    this.name=name;
+    this.age = age;
+   }
+   get name() {
+     return this.name;
+   }
+   set name(e) {
+     this.name = e;
+   }
+   get age() {
+     return this.age;
+   }
+   set age(e) {
+     this.age = e;
+   }
+ }
+
+  const mati = new person('hej',199);
+  console.log(mati);
+  mati.name ='lol';
+  mati.age =1994;
+  console.log(mati);
 
 }
