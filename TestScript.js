@@ -926,12 +926,14 @@ function inheritanceObjectDotCreate(){
 
 }
 function workWithClass(){
- class person {
+  class person {
    name = "default";
    age = 18;
+   _cash; //variable with underscore is convention to protect variables against unauthorised usage
    constructor(name,age) {
     this.name=name;
     this.age = age;
+    this._cash = Math.trunc(Math.random() *1000);
    }
    get name() {
      return this.name;
@@ -945,7 +947,7 @@ function workWithClass(){
    set age(e) {
      this.age = e;
    }
- }
+  }
 
   const mati = new person('hej',199);
   console.log(mati);
