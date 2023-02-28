@@ -106,7 +106,8 @@ const hobbies = ["sport", "music"];
 //inheritanceInClass();
 //inheritanceInES6();
 //inheritanceObjectDotCreate();
-workWithClass();
+//workWithClass();
+XMLHTTP();
 
 //<<<CORE<<<
 
@@ -975,4 +976,12 @@ function workWithClass(){
   mati.addAction('lol').addAction('hej').addAction('lol2').showAction();
 
 
+}
+function XMLHTTP(){
+  const request = new XMLHttpRequest();
+  request.open("GET", "https://restcountries.com/v3.1/name/poland");
+  request.send();
+  request.addEventListener('load',function(){
+    console.log(this.responseText);
+  });
 }
