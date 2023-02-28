@@ -107,8 +107,8 @@ const hobbies = ["sport", "music"];
 //inheritanceInES6();
 //inheritanceObjectDotCreate();
 //workWithClass();
-XMLHTTP();
-
+//XMLHTTP();
+pathViarables();
 //<<<CORE<<<
 
 //***Functions, all activity of current process***
@@ -984,4 +984,8 @@ function XMLHTTP(){
   request.addEventListener('load',function(){
     console.log(this.responseText);
   });
+}
+function pathViarables(){
+  console.log(__dirname);
+  console.log(__filename);
 }
