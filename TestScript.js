@@ -1019,6 +1019,21 @@ function mongooseExample(){
     },
   });
   const User = mongoose.model("User", userSchema);
+
+  const itemSchema = new Schema({
+    name: String,
+    owner:{
+      type: Schema.Types.ObjectId,
+      ref:'User'
+    }
+  });
+  const Item = mongoose.model('Item',itemSchema);
+
+  // const newItem = Item({
+  //   name: "2aaqweqweasdasd",
+  //   owner: "640f09ef05c8e95ef1046be1",
+  // });
+  //newItem.save().then(res=>console.log(res));
   // const newUser1 = User({
   //   name:'Kasia',
   //   password:'asdfaflo23asdasdl'
@@ -1041,4 +1056,8 @@ function mongooseExample(){
 //   User.deleteOne({_id:u._id}).then(res=>console.log(res));
 // })();
 //
+//
+  Item.find()
+  .populate("owner")
+  .then(res=>console.log(res));
 }
