@@ -1018,23 +1018,23 @@ function mongooseExample(){
       required: true,
     },
   });
-   userSchema.methods.sayHello = function sayHello() {
-     console.log(`Hi i am ${this.name}`);
-   };
+  userSchema.methods.sayHello = function sayHello() {
+    console.log(`Hi i am ${this.name}`);
+  };
   const User = mongoose.model("User", userSchema);
 
   const itemSchema = new Schema({
     name: String,
-    owner:{
+    owner: {
       type: Schema.Types.ObjectId,
-      ref:'User'
-    }
+      ref: "User",
+    },
   });
-  const Item = mongoose.model('Item',itemSchema);
+  const Item = mongoose.model("Item", itemSchema);
 
-  User.findOne().then((res) => {
-    res.sayHello();
-  });
+  // User.findOne().then((res) => {
+  //   res.sayHello();
+  // });
 
   // const newItem = Item({
   //   name: "2aaqweqweasdasd",
@@ -1049,7 +1049,7 @@ function mongooseExample(){
 
   // User.find({}).then(res=>console.log(res));//all users
   // User.find({},'name').then((res) => console.log(res)); //all users, but only with name
-    
+
   // User.find({name:/^K/})
   //   .find({password:/^a/}) // finding accurate document meeted a conditions
   //   .cursor()   // iterating through all output
@@ -1057,13 +1057,13 @@ function mongooseExample(){
   //   .on('end',()=>console.log("end"));
   //
   //
-// (async function(){       // deleting single object from collection
-//   const u = await User.findOne({})
-//   console.log(u);
-//   User.deleteOne({_id:u._id}).then(res=>console.log(res));
-// })();
-//
-//
+  // (async function(){       // deleting single object from collection
+  //   const u = await User.findOne({})
+  //   console.log(u);
+  //   User.deleteOne({_id:u._id}).then(res=>console.log(res));
+  // })();
+  //
+  //
   // Item.find()
   //   .populate({
   //     path: "owner",
@@ -1073,5 +1073,19 @@ function mongooseExample(){
   //   .then((res) => {
   //     console.log(res);
   //     console.log(res.length);
+  //   });
+//
+  // let u1;
+  // Item.find()
+  //   .then((res) => {
+  //     console.log(res[0]);
+  //     console.log(res.length);
+  //     u1=res[0];
+  //     console.log(u1.name);
+  //     u1.name=u1.name +'New';
+  //     return u1.save();
+  //   })
+  //   .then(res=>{
+  //     console.log(res);
   //   });
 }
