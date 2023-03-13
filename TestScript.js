@@ -1058,6 +1058,13 @@ function mongooseExample(){
 //
 //
   Item.find()
-  .populate("owner")
-  .then(res=>console.log(res));
+    .populate({
+      path: "owner",
+      match: { name: "mati" },
+      //select: "name",
+    })
+    .then((res) => {
+      console.log(res);
+      console.log(res.length);
+    });
 }
