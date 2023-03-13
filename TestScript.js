@@ -1018,18 +1018,22 @@ function mongooseExample(){
       required: true,
     },
   });
+    const itemSchema = new Schema({
+      name: String,
+      owner: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    });
   userSchema.methods.sayHello = function sayHello() {
+    console.log(`Hi i am ${this.name}`);
+  };
+  itemSchema.methods.sayHello = function sayHello() {
     console.log(`Hi i am ${this.name}`);
   };
   const User = mongoose.model("User", userSchema);
 
-  const itemSchema = new Schema({
-    name: String,
-    owner: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  });
+
   const Item = mongoose.model("Item", itemSchema);
 
   // User.findOne().then((res) => {
@@ -1062,14 +1066,17 @@ function mongooseExample(){
   //   console.log(u);
   //   User.deleteOne({_id:u._id}).then(res=>console.log(res));
   // })();
-  //
-  //
-  Item.find()
-    .populate("owner")
-    .then((res) => {
-      console.log(res[0].owner.name);
-      console.log(res.length);
-    });
+  ////
+  ////
+  // Item.find()
+  //  // .populate("owner")
+  //   .then((res) => {
+  //     const i = res[0];
+  //     i.name = i.name+ "New";
+  //     console.log(res.length);
+  //     return i.save();
+  //   })
+  //   .then(res=>console.log(res));
 //
   // let u1;
   // Item.find()
