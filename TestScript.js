@@ -996,31 +996,42 @@ function pathViarables(){
   console.log(__filename);
 }
 function mongooseExample(){
-
-  mongoose.connect(
-    "mongodb+srv://lecislav:usZSIcaVCbS1WPxK@cluster0.cehtsby.mongodb.net/?retryWrites=true&w=majority"
-  )
-  .then(result=>{
-    console.log('ok');
-  })
-  .catch(err=>console.log(err));
+  mongoose
+    .connect(
+      "mongodb+srv://lecislav:usZSIcaVCbS1WPxK@cluster0.cehtsby.mongodb.net/?retryWrites=true&w=majority"
+    )
+    .then((result) => {
+      console.log("ok");
+    })
+    .catch((err) => console.log(err));
 
   const Schema = mongoose.Schema;
   const userSchema = new Schema({
-    name:{
+    name: {
       type: String,
       required: true,
     },
-    password:{
+    password: {
       type: String,
       required: true,
-    }
+    },
   });
-  const User = mongoose.model('User',userSchema);
-  const newUser1 = User({
-    name:'mati',
-    password:'1234'
-  })
-  newUser1.save().then(res=>console.log(res)).catch(err=>console.log(err));
-//
+  const User = mongoose.model("User", userSchema);
+  // const newUser1 = User({
+  //   name:'Kasia',
+  //   password:'asdfaflo23asdasdl'
+  // });
+  // newUser1.save().then(res=>console.log(res)).catch(err=>console.log(err));
+
+  // User.find({}).then(res=>console.log(res));//all users
+  // User.find({},'name').then((res) => console.log(res)); //all users, but only with name
+    
+  // User.find({name:/^K/})
+  //   .find({password:/^a/}) // finding accurate document meeted a conditions
+  //   .cursor()   // iterating through all output
+  //   .on('data',doc=>console.log(doc + 'LOL'))
+  //   .on('end',()=>console.log("end"));
+  //
+
+  
 }
