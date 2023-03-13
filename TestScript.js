@@ -1064,16 +1064,12 @@ function mongooseExample(){
   // })();
   //
   //
-  // Item.find()
-  //   .populate({
-  //     path: "owner",
-  //     match: { name: "mati" },
-  //     //select: "name",
-  //   })
-  //   .then((res) => {
-  //     console.log(res);
-  //     console.log(res.length);
-  //   });
+  Item.find()
+    .populate("owner")
+    .then((res) => {
+      console.log(res[0].owner.name);
+      console.log(res.length);
+    });
 //
   // let u1;
   // Item.find()
