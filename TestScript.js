@@ -24,6 +24,9 @@ const NodeCursor = require("node-cursor");
 //Electron
 let { app, BrowserWindow } = require("electron");
 
+//mongose
+const mongoose = require('mongoose');
+
 //express
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -52,8 +55,8 @@ const person = {
 
 const hobbies = ["sport", "music"];
 
-//let app;
-//<<<variables<<<
+
+
 
 //>>>CORE>>>
 //createHttpServer();
@@ -108,8 +111,10 @@ const hobbies = ["sport", "music"];
 //inheritanceObjectDotCreate();
 //workWithClass();
 //XMLHTTP();
-pathViarables();
-//<<<CORE<<<
+//pathViarables();
+mongooseExample();
+
+
 
 
 //***Functions, all activity of current process***
@@ -989,4 +994,33 @@ function XMLHTTP(){
 function pathViarables(){
   console.log(__dirname);
   console.log(__filename);
+}
+function mongooseExample(){
+
+  mongoose.connect(
+    "mongodb+srv://lecislav:usZSIcaVCbS1WPxK@cluster0.cehtsby.mongodb.net/?retryWrites=true&w=majority"
+  )
+  .then(result=>{
+    console.log('ok');
+  })
+  .catch(err=>console.log(err));
+
+  const Schema = mongoose.Schema;
+  const userSchema = new Schema({
+    name:{
+      type: String,
+      required: true,
+    },
+    password:{
+      type: String,
+      required: true,
+    }
+  });
+  const User = mongoose.model('User',userSchema);
+  const newUser1 = User({
+    name:'mati',
+    password:'1234'
+  })
+  newUser1.save().then(res=>console.log(res)).catch(err=>console.log(err));
+//
 }
