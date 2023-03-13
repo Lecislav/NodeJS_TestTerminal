@@ -114,7 +114,9 @@ const hobbies = ["sport", "music"];
 //pathViarables();
 mongooseExample();
 
+/*
 
+*/
 
 
 //***Functions, all activity of current process***
@@ -1032,6 +1034,11 @@ function mongooseExample(){
   //   .on('data',doc=>console.log(doc + 'LOL'))
   //   .on('end',()=>console.log("end"));
   //
-
-  
+  //
+// (async function(){       // deleting single object from collection
+//   const u = await User.findOne({})
+//   console.log(u);
+//   User.deleteOne({_id:u._id}).then(res=>console.log(res));
+// })();
+//
 }
