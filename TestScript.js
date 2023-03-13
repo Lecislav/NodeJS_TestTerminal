@@ -1018,6 +1018,9 @@ function mongooseExample(){
       required: true,
     },
   });
+   userSchema.methods.sayHello = function sayHello() {
+     console.log(`Hi i am ${this.name}`);
+   };
   const User = mongoose.model("User", userSchema);
 
   const itemSchema = new Schema({
@@ -1028,6 +1031,10 @@ function mongooseExample(){
     }
   });
   const Item = mongoose.model('Item',itemSchema);
+
+  User.findOne().then((res) => {
+    res.sayHello();
+  });
 
   // const newItem = Item({
   //   name: "2aaqweqweasdasd",
@@ -1057,14 +1064,14 @@ function mongooseExample(){
 // })();
 //
 //
-  Item.find()
-    .populate({
-      path: "owner",
-      match: { name: "mati" },
-      //select: "name",
-    })
-    .then((res) => {
-      console.log(res);
-      console.log(res.length);
-    });
+  // Item.find()
+  //   .populate({
+  //     path: "owner",
+  //     match: { name: "mati" },
+  //     //select: "name",
+  //   })
+  //   .then((res) => {
+  //     console.log(res);
+  //     console.log(res.length);
+  //   });
 }
