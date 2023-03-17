@@ -1,4 +1,4 @@
-
+const util = require('./util');
 
 //object managing currently script's process
 const process = require("node:process");
@@ -29,12 +29,6 @@ const mongoose = require('mongoose');
 
 //mailing
 const nodemailer = require('nodemailer');
-const sendgridTransporter = require('nodemailer-sendgrid-transport');
-const transporter = nodemailer.createTransport(sendgridTransport({
-  auth:{
-    api_key:'',
-  }
-}));
 
 //express
 const express = require("express");
@@ -123,6 +117,7 @@ const hobbies = ["sport", "music"];
 //XMLHTTP();
 //pathViarables();
 //mongooseExample();
+//sendingEmail();
 
 /*
 
@@ -1102,6 +1097,15 @@ function mongooseExample(){
   //     console.log(res);
   //   });
 }
-function sendingEmailWithSendSgrid(){
-
+function sendingEmail(){
+  const transporter = nodemailer.createTransport({
+    host: "smtp.protonmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: util.username,
+      pass: util.password,
+    },
+  });
+  transporter.verify().then(console.log).catch(console.error);
 }
