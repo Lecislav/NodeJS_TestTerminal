@@ -9,6 +9,8 @@
     "node-cursor": "^1.1.2",
     "node-gyp": "^9.3.0",
     "node-mouse": "^0.0.2",
+    "nodemailer": "^6.9.1",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "nodemon": "^2.0.20",
     "serialport": "^10.5.0",
     "xinput-mouse-key-logger": "^1.0.1"

@@ -27,12 +27,22 @@ let { app, BrowserWindow } = require("electron");
 //mongose
 const mongoose = require('mongoose');
 
+//mailing
+const nodemailer = require('nodemailer');
+const sendgridTransporter = require('nodemailer-sendgrid-transport');
+const transporter = nodemailer.createTransport(sendgridTransport({
+  auth:{
+    api_key:'',
+  }
+}));
+
 //express
 const express = require("express");
 const bodyParser = require("body-parser");
 const { type } = require("node:os");
 const internal = require("node:stream");
 const { dir } = require("node:console");
+const sendgridTransport = require("nodemailer-sendgrid-transport");
 
 //>>>>variables>>>
 let rl; //readline Interface
@@ -112,7 +122,7 @@ const hobbies = ["sport", "music"];
 //workWithClass();
 //XMLHTTP();
 //pathViarables();
-mongooseExample();
+//mongooseExample();
 
 /*
 
@@ -1091,4 +1101,7 @@ function mongooseExample(){
   //   .then(res=>{
   //     console.log(res);
   //   });
+}
+function sendingEmailWithSendSgrid(){
+
 }
