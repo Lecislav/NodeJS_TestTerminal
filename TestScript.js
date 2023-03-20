@@ -118,6 +118,7 @@ const hobbies = ["sport", "music"];
 //pathViarables();
 //mongooseExample();
 //sendingEmail();
+errorHandlingSimpleExample();
 
 /*
 
@@ -1108,4 +1109,18 @@ function sendingEmail(){
     },
   });
   transporter.verify().then(console.log).catch(console.error);
+}
+function errorHandlingSimpleExample(){
+  const checkFunction = (a,b) =>{
+    if(a!==b){
+      throw new Error("different values");
+    }
+    else return true;
+  }
+  try {
+    checkFunction(1,2);
+  } catch (error) {
+    console.log('sth wrong, but error handled');
+    console.log(error);
+  }
 }
