@@ -118,8 +118,8 @@ const hobbies = ["sport", "music"];
 //pathViarables();
 //mongooseExample();
 //sendingEmail();
-errorHandlingSimpleExample();
-
+//errorHandlingSimpleExample();
+envVariables();
 /*
 
 */
@@ -1123,4 +1123,7 @@ function errorHandlingSimpleExample(){
     console.log('sth wrong, but error handled');
     console.log(error);
   }
+}
+function envVariables(){
+  console.log(process.env);
 }
