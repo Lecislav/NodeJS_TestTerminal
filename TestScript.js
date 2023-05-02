@@ -119,7 +119,8 @@ const hobbies = ["sport", "music"];
 //mongooseExample();
 //sendingEmail();
 //errorHandlingSimpleExample();
-envVariables();
+//envVariables();
+//sendingEmail();
 /*
 
 */
@@ -701,21 +702,21 @@ function mathFunction() {
 
 
 }
-function dataAndTime(){
+// function dataAndTime(){
 
-console.log(new Date(1994,12,19,00,50,05));
-console.log(new Date(1994, 12, 19));
-console.log(new Date(0));
-const z = new Date(15367 * 24 * 60 * 60 * 1000);;
-console.log(z);
-console.log(z.getFullYear());
-console.log(z.getDay());
-console.log(z.getDate());
-console.log(z.toISOString());
-console.log(Date.now());
-console.log(new Intl.DateTimeFormat('en-GB').format(new Date()));
-console.log();
-}
+// console.log(new Date(1994,12,19,00,50,05));
+// console.log(new Date(1994, 12, 19));
+// console.log(new Date(0));
+// const z = new Date(15367 * 24 * 60 * 60 * 1000);;
+// console.log(z);
+// console.log(z.getFullYear());
+// console.log(z.getDay());
+// console.log(z.getDate());
+// console.log(z.toISOString());
+// console.log(Date.now());
+// console.log(new Intl.DateTimeFormat('en-GB').format(new Date()));
+// console.log();
+// }
 function timers(){
  
   const t= setTimeout((ele1,ele2)=>{
@@ -1098,18 +1099,6 @@ function mongooseExample(){
   //     console.log(res);
   //   });
 }
-function sendingEmail(){
-  const transporter = nodemailer.createTransport({
-    host: "smtp.protonmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      user: util.username,
-      pass: util.password,
-    },
-  });
-  transporter.verify().then(console.log).catch(console.error);
-}
 function errorHandlingSimpleExample(){
   const checkFunction = (a,b) =>{
     if(a!==b){
@@ -1126,4 +1115,23 @@ function errorHandlingSimpleExample(){
 }
 function envVariables(){
   console.log(process.env);
+}
+function sendingEmail(){
+const nodemailer = require("nodemailer");
+
+  let transporter = nodemailer.createTransport({
+    sendmail: true,
+    newline: "windows",
+  });
+  transporter.sendMail(
+    {
+      from: "sender@example.com",
+      to: "lecislav@protonmail.com",
+      subject: "Message",
+      text: "I hope this message gets streamed!",
+    },
+    (err, info) => {
+
+    }
+  );
 }
