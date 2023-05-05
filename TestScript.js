@@ -38,6 +38,8 @@ const internal = require("node:stream");
 const { dir } = require("node:console");
 const sendgridTransport = require("nodemailer-sendgrid-transport");
 
+const kkk = require('ffi');
+
 //>>>>variables>>>
 let rl; //readline Interface
 let cursorPosition;

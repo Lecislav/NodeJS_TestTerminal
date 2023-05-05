@@ -7,6 +7,7 @@
     "keylogger.js": "^0.0.4",
     "mongoose": "^7.0.1",
     "mouse-position": "^2.1.0",
+    "nan": "^2.17.0",
     "node-cursor": "^1.1.2",
     "node-gyp": "^9.3.0",
     "node-mouse": "^0.0.2",
