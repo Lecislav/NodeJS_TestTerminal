@@ -37,7 +37,6 @@ const { type } = require("node:os");
 const internal = require("node:stream");
 const { dir } = require("node:console");
 const sendgridTransport = require("nodemailer-sendgrid-transport");
-const kkk = require('ffi');
 
 //>>>>variables>>>
 let rl; //readline Interface
@@ -122,6 +121,7 @@ const hobbies = ["sport", "music"];
 //errorHandlingSimpleExample();
 //envVariables();
 //sendingEmail();
+processes();
 /*
 
 */
@@ -1135,4 +1135,20 @@ const nodemailer = require("nodemailer");
 
     }
   );
+}
+function processes(){
+// Execute system command to get running processes
+childprocess.exec("tasklist", (error, stdout, stderr) => {
+  if (error) {
+    console.error(`Error: ${error.message}`);
+    return;
+  }
+  if (stderr) {
+    console.error(`Command execution error: ${stderr}`);
+    return;
+  }
+
+  // Process the output
+  console.log(stdout);
+});
 }
