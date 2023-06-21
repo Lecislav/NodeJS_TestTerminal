@@ -120,8 +120,8 @@ const hobbies = ["sport", "music"];
 //sendingEmail();
 //errorHandlingSimpleExample();
 //envVariables();
-//sendingEmail();
-processes();
+sendingEmail();
+// processes();
 /*
 
 */
@@ -1119,22 +1119,33 @@ function envVariables(){
 }
 function sendingEmail(){
 const nodemailer = require("nodemailer");
+const transporter = nodemailer.createTransport({
+  host: "server023400.nazwa.pl", // IP address of the server
+  port: 465, // SMTP port (can vary depending on your server configuration)
+  auth: {
+    user: "kontakt@fpklima.pl", // Your email address
+    pass: "", // Your email password or app password
+  },
+});
 
-  let transporter = nodemailer.createTransport({
-    sendmail: true,
-    newline: "windows",
-  });
-  transporter.sendMail(
-    {
-      from: "sender@example.com",
-      to: "lecislav@protonmail.com",
-      subject: "Message",
-      text: "I hope this message gets streamed!",
-    },
-    (err, info) => {
+// Set up the email data
+const mailOptions = {
+  from: "kontakt@fpklima.pl", // Sender address
+  to: "kontakt@fpklima.pl", // Recipient address
+  subject: "Hello from Nodemailer!", // Subject line
+  text: "Hello, this is a test email sent from Nodemailer!", // Plain text body
+};
 
-    }
-  );
+// Send the email
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+    console.log("Error occurred:");
+    console.log(error.message);
+  } else {
+    console.log("Email sent successfully!");
+    console.log("Message ID:", info.messageId);
+  }
+});
 }
 function processes(){
 // Execute system command to get running processes
