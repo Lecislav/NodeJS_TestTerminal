@@ -15,6 +15,7 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "nodemon": "^2.0.20",
     "serialport": "^10.5.0",
+    "systeminformation": "^5.18.15",
     "xinput-mouse-key-logger": "^1.0.1"
   },
   "browser": {

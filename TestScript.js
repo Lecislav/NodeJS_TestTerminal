@@ -120,8 +120,10 @@ const hobbies = ["sport", "music"];
 //sendingEmail();
 //errorHandlingSimpleExample();
 //envVariables();
-sendingEmail();
+// sendingEmail();
 // processes();
+checkingIfUseHaveExternalGraphicCard();
+
 /*
 
 */
@@ -1162,4 +1164,26 @@ childprocess.exec("tasklist", (error, stdout, stderr) => {
   // Process the output
   console.log(stdout);
 });
+}
+
+async function checkingIfUseHaveExternalGraphicCard() {
+  const si = require("systeminformation");
+    try {
+      const graphics = await si.graphics();
+
+      const externalGraphics = graphics.controllers.some(
+        (controller) =>
+          controller.vendor.toLowerCase().includes("amd") ||
+          controller.vendor.toLowerCase().includes("nvidia")
+      );
+
+      if (externalGraphics) {
+        console.log("External graphics card (AMD or NVIDIA) detected.");
+      } else {
+        console.log("No external graphics card detected.");
+      }
+      console.log(graphics.controllers);
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
 }
